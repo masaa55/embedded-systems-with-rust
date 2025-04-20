@@ -1,0 +1,13 @@
+[package]
+name = "wokwi-blinky"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+esp32c3-hal = { version = "0.10", features = ["rt"] }
+panic-halt = "0.2.0"
+esp-backtrace = { version = "0.8", features = ["panic-handler"] }
+
+[profile.release]
+opt-level = "s"  # Optimize for size
+lto = true       # Link-time optimization
